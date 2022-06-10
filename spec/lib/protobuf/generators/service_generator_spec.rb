@@ -13,7 +13,7 @@ RSpec.describe ::Protobuf::Generators::ServiceGenerator do
     optional :string, :foo, 1
   end
 
-  class ::Google::Protobuf::MethodOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::MethodOptions < ::Protobuf::Message
     optional :string, :custom_string_option, 22000, :extension => true
     optional :bool, :custom_bool_option, 22001, :extension => true
     optional :int32, :custom_int32_option, 22002, :extension => true
@@ -45,7 +45,7 @@ RSpec.describe ::Protobuf::Generators::ServiceGenerator do
     }
   end
 
-  let(:service) { ::Google::Protobuf::ServiceDescriptorProto.new(service_fields) }
+  let(:service) { ::Google::Protobuf::Bamboohealth::ServiceDescriptorProto.new(service_fields) }
 
   subject(:service_generator) { described_class.new(service) }
 

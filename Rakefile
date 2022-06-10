@@ -45,8 +45,8 @@ namespace :compile do
     files = {
       'tmp/rpc/dynamic_discovery.pb.rb'               => 'lib/protobuf/rpc',
       'tmp/rpc/rpc.pb.rb'                             => 'lib/protobuf/rpc',
-      'tmp/rpc/google/protobuf/descriptor.pb.rb'      => 'lib/protobuf/descriptors/google/protobuf',
-      'tmp/rpc/google/protobuf/compiler/plugin.pb.rb' => 'lib/protobuf/descriptors/google/protobuf/compiler',
+      'tmp/rpc/google/protobuf/descriptor.pb.rb'      => 'lib/protobuf/descriptors/google/protobuf/bamboohealth',
+      'tmp/rpc/google/protobuf/compiler/plugin.pb.rb' => 'lib/protobuf/descriptors/google/protobuf/bamboohealth/compiler',
     }
 
     files.each_pair do |source_file, destination_dir|

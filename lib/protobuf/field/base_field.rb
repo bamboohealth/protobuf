@@ -7,7 +7,7 @@ module Protobuf
   module Field
     class BaseField
       include ::Protobuf::Logging
-      ::Protobuf::Optionable.inject(self, false) { ::Google::Protobuf::FieldOptions }
+      ::Protobuf::Optionable.inject(self, false) { ::Google::Protobuf::Bamboohealth::FieldOptions }
 
       ##
       # Constants

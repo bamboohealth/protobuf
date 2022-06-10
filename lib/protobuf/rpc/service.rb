@@ -12,7 +12,7 @@ module Protobuf
     class Service
       include ::Protobuf::Logging
       include ::Protobuf::Rpc::ServiceFilters
-      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::ServiceOptions }
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::ServiceOptions }
 
       DEFAULT_HOST = '127.0.0.1'.freeze
       DEFAULT_PORT = 9399

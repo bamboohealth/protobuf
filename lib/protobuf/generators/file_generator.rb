@@ -10,7 +10,7 @@ module Protobuf
 
       def initialize(*args)
         super
-        @output_file = ::Google::Protobuf::Compiler::CodeGeneratorResponse::File.new(:name => file_name)
+        @output_file = ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse::File.new(:name => file_name)
         @extension_fields = Hash.new { |h, k| h[k] = [] }
         @known_messages = {}
         @known_enums = {}
@@ -82,9 +82,9 @@ module Protobuf
           fully_qualified_namespace = ".#{namespace}"
         end
         # Record all the message descriptor name's we encounter (should be the whole tree).
-        if descriptor.is_a?(::Google::Protobuf::DescriptorProto)
+        if descriptor.is_a?(::Google::Protobuf::Bamboohealth::DescriptorProto)
           @known_messages[fully_qualified_namespace || descriptor.name] = descriptor
-        elsif descriptor.is_a?(::Google::Protobuf::EnumDescriptorProto)
+        elsif descriptor.is_a?(::Google::Protobuf::Bamboohealth::EnumDescriptorProto)
           @known_enums[fully_qualified_namespace || descriptor.name] = descriptor
           return
         end
@@ -255,7 +255,7 @@ module Protobuf
 
       def inject_optionable
         return if descriptor.package.empty? && !ENV.key?('PB_ALLOW_DEFAULT_PACKAGE_NAME')
-        puts "::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }"
+        puts "::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }"
       end
     end
   end

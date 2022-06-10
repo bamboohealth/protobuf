@@ -6,7 +6,7 @@ RSpec.describe ::Protobuf::Generators::FileGenerator do
 
   let(:base_descriptor_fields) { { :name => 'test/foo.proto' } }
   let(:descriptor_fields) { base_descriptor_fields }
-  let(:file_descriptor) { ::Google::Protobuf::FileDescriptorProto.new(descriptor_fields) }
+  let(:file_descriptor) { ::Google::Protobuf::Bamboohealth::FileDescriptorProto.new(descriptor_fields) }
 
   subject { described_class.new(file_descriptor) }
   specify { expect(subject.file_name).to eq('test/foo.pb.rb') }
@@ -63,7 +63,7 @@ EOF
 require 'protobuf'
 
 module Foo
-  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 end
 
 EOF
@@ -76,8 +76,8 @@ EOF
           :extension => [{
             :name => 'boom',
             :number => 20_000,
-            :label => Google::Protobuf::FieldDescriptorProto::Label::LABEL_OPTIONAL,
-            :type => Google::Protobuf::FieldDescriptorProto::Type::TYPE_STRING,
+            :label => Google::Protobuf::Bamboohealth::FieldDescriptorProto::Label::LABEL_OPTIONAL,
+            :type => Google::Protobuf::Bamboohealth::FieldDescriptorProto::Type::TYPE_STRING,
             :extendee => '.google.protobuf.FieldOptions',
           }],
         )
@@ -96,12 +96,12 @@ require 'protobuf'
 module Test
   module Pkg
     module File_generator_spec
-      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
       ##
       # Extended Message Fields
       #
-      class ::Google::Protobuf::FieldOptions < ::Protobuf::Message
+      class ::Google::Protobuf::Bamboohealth::FieldOptions < ::Protobuf::Message
         optional :string, :".test.pkg.file_generator_spec.boom", 20000, :extension => true
       end
 

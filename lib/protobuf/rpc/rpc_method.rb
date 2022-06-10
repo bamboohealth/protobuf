@@ -1,7 +1,7 @@
 module Protobuf
   module Rpc
     class RpcMethod
-      ::Protobuf::Optionable.inject(self, false) { ::Google::Protobuf::MethodOptions }
+      ::Protobuf::Optionable.inject(self, false) { ::Google::Protobuf::Bamboohealth::MethodOptions }
 
       attr_reader :method, :request_type, :response_type
 

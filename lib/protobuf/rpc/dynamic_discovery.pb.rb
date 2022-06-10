@@ -8,7 +8,7 @@ require 'protobuf'
 module Protobuf
   module Rpc
     module DynamicDiscovery
-      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
       ##
       # Enum Classes

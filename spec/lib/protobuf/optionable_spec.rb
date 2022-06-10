@@ -33,14 +33,14 @@ RSpec.describe 'Optionable' do
     it '.get_option errors if the option is not accessed by its fully qualified name' do
       message_field = ::Protobuf::Field::MessageField.new(
         OptionableGetOptionTest, :optional, OptionableGetOptionTest, '.package.message_field', 2, '.message_field', {})
-      allow(::Google::Protobuf::MessageOptions).to receive(:get_field).and_return(message_field)
+      allow(::Google::Protobuf::Bamboohealth::MessageOptions).to receive(:get_field).and_return(message_field)
       expect { OptionableGetOptionTest.get_option(message_field.name) }.to raise_error(ArgumentError)
     end
 
     it '.get_option can return an option representing a message' do
       message_field = ::Protobuf::Field::MessageField.new(
         OptionableGetOptionTest, :optional, OptionableGetOptionTest, '.package.message_field', 2, 'message_field', {})
-      allow(::Google::Protobuf::MessageOptions).to receive(:get_field).and_return(message_field)
+      allow(::Google::Protobuf::Bamboohealth::MessageOptions).to receive(:get_field).and_return(message_field)
       expect(OptionableGetOptionTest.get_option(message_field.fully_qualified_name)).to eq(OptionableGetOptionTest.new(:field => 33))
     end
 
@@ -71,14 +71,14 @@ RSpec.describe 'Optionable' do
     it '#get_option errors if the option is not accessed by its fully qualified name' do
       message_field = ::Protobuf::Field::MessageField.new(
         OptionableGetOptionTest, :optional, OptionableGetOptionTest, '.package.message_field', 2, 'message_field', {})
-      allow(::Google::Protobuf::MessageOptions).to receive(:get_field).and_return(message_field)
+      allow(::Google::Protobuf::Bamboohealth::MessageOptions).to receive(:get_field).and_return(message_field)
       expect { OptionableGetOptionTest.new.get_option(message_field.name) }.to raise_error(ArgumentError)
     end
 
     it '#get_option can return an option representing a message' do
       message_field = ::Protobuf::Field::MessageField.new(
         OptionableGetOptionTest, :optional, OptionableGetOptionTest, '.package.message_field', 2, 'message_field', {})
-      allow(::Google::Protobuf::MessageOptions).to receive(:get_field).and_return(message_field)
+      allow(::Google::Protobuf::Bamboohealth::MessageOptions).to receive(:get_field).and_return(message_field)
       expect(OptionableGetOptionTest.new.get_option(message_field.fully_qualified_name)).to eq(OptionableGetOptionTest.new(:field => 33))
     end
 
@@ -105,7 +105,7 @@ RSpec.describe 'Optionable' do
     it 'adds klass.{set,get}_option' do
       expect { klass.get_option(:deprecated) }.to raise_error(NoMethodError)
       expect { klass.__send__(:set_option, :deprecated, true) }.to raise_error(NoMethodError)
-      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::MessageOptions }
+      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::MessageOptions }
       expect(klass.get_option(:deprecated)).to eq(false)
       expect { klass.set_option(:deprecated, true) }.to raise_error(NoMethodError)
       klass.__send__(:set_option, :deprecated, true)
@@ -114,30 +114,30 @@ RSpec.describe 'Optionable' do
 
     it 'adds klass#get_option' do
       expect { klass.new.get_option(:deprecated) }.to raise_error(NoMethodError)
-      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::MessageOptions }
+      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::MessageOptions }
       expect(klass.new.get_option(:deprecated)).to eq(false)
     end
 
     it 'adds klass.optionable_descriptor_class' do
       expect { klass.optionable_descriptor_class }.to raise_error(NoMethodError)
-      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::MessageOptions }
-      expect(klass.optionable_descriptor_class).to eq(::Google::Protobuf::MessageOptions)
+      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::MessageOptions }
+      expect(klass.optionable_descriptor_class).to eq(::Google::Protobuf::Bamboohealth::MessageOptions)
     end
 
     it 'does not add klass.optionable_descriptor_class twice' do
       expect(klass).to receive(:define_singleton_method).once
-      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::MessageOptions }
+      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::MessageOptions }
       klass.instance_eval do
         def optionable_descriptor_class
-          ::Google::Protobuf::MessageOptions
+          ::Google::Protobuf::Bamboohealth::MessageOptions
         end
       end
-      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::MessageOptions }
+      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::MessageOptions }
     end
 
     it 'throws error when klass.optionable_descriptor_class defined twice with different args' do
-      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::MessageOptions }
-      expect { ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::FileOptions } }
+      ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::MessageOptions }
+      expect { ::Protobuf::Optionable.inject(klass) { ::Google::Protobuf::Bamboohealth::FileOptions } }
         .to raise_error('A class is being defined with two different descriptor classes, something is very wrong')
     end
 
@@ -146,7 +146,7 @@ RSpec.describe 'Optionable' do
       it 'adds object.{get,set}_option' do
         expect { object.get_option(:deprecated) }.to raise_error(NoMethodError)
         expect { object.__send__(:set_option, :deprecated, true) }.to raise_error(NoMethodError)
-        ::Protobuf::Optionable.inject(klass, false) { ::Google::Protobuf::MessageOptions }
+        ::Protobuf::Optionable.inject(klass, false) { ::Google::Protobuf::Bamboohealth::MessageOptions }
         expect(object.get_option(:deprecated)).to eq(false)
         expect { object.set_option(:deprecated, true) }.to raise_error(NoMethodError)
         object.__send__(:set_option, :deprecated, true)
@@ -155,15 +155,15 @@ RSpec.describe 'Optionable' do
 
       it 'does not add klass.{get,set}_option' do
         expect { object.get_option(:deprecated) }.to raise_error(NoMethodError)
-        ::Protobuf::Optionable.inject(klass, false) { ::Google::Protobuf::MessageOptions }
+        ::Protobuf::Optionable.inject(klass, false) { ::Google::Protobuf::Bamboohealth::MessageOptions }
         expect { klass.get_option(:deprecated) }.to raise_error(NoMethodError)
         expect { klass.__send__(:set_option, :deprecated) }.to raise_error(NoMethodError)
       end
 
       it 'creates an instance method optionable_descriptor_class' do
         expect { object.optionable_descriptor_class }.to raise_error(NoMethodError)
-        ::Protobuf::Optionable.inject(klass, false) { ::Google::Protobuf::MessageOptions }
-        expect(object.optionable_descriptor_class).to eq(::Google::Protobuf::MessageOptions)
+        ::Protobuf::Optionable.inject(klass, false) { ::Google::Protobuf::Bamboohealth::MessageOptions }
+        expect(object.optionable_descriptor_class).to eq(::Google::Protobuf::Bamboohealth::MessageOptions)
       end
     end
   end
@@ -189,7 +189,7 @@ RSpec.describe 'Optionable' do
 
       it 'gets base options' do
         expect(subject.get_option!(:ctype))
-          .to eq(::Google::Protobuf::FieldOptions::CType::CORD)
+          .to eq(::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD)
       end
 
       it 'gets unset options' do

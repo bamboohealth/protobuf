@@ -5,8 +5,8 @@ require 'protobuf/code_generator'
 RSpec.describe ::Protobuf::CodeGenerator do
 
   # Some constants to shorten things up
-  DESCRIPTOR = ::Google::Protobuf
-  COMPILER = ::Google::Protobuf::Compiler
+  DESCRIPTOR = ::Google::Protobuf::Bamboohealth
+  COMPILER = ::Google::Protobuf::Bamboohealth::Compiler
 
   describe '#response_bytes' do
     let(:input_file1) { DESCRIPTOR::FileDescriptorProto.new(:name => 'test/foo.proto') }
@@ -45,8 +45,8 @@ RSpec.describe ::Protobuf::CodeGenerator do
         :extension => [{
           :name => 'boom',
           :number => 20100,
-          :label => Google::Protobuf::FieldDescriptorProto::Label::LABEL_OPTIONAL,
-          :type => Google::Protobuf::FieldDescriptorProto::Type::TYPE_STRING,
+          :label => Google::Protobuf::Bamboohealth::FieldDescriptorProto::Label::LABEL_OPTIONAL,
+          :type => Google::Protobuf::Bamboohealth::FieldDescriptorProto::Type::TYPE_STRING,
           :extendee => '.google.protobuf.FieldOptions',
         }],
       )

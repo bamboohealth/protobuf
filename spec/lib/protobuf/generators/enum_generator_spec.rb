@@ -20,7 +20,7 @@ RSpec.describe ::Protobuf::Generators::EnumGenerator do
     }
   end
 
-  let(:enum) { ::Google::Protobuf::EnumDescriptorProto.new(enum_fields) }
+  let(:enum) { ::Google::Protobuf::Bamboohealth::EnumDescriptorProto.new(enum_fields) }
 
   subject { described_class.new(enum) }
 

@@ -13,7 +13,7 @@ require 'protobuf/rpc/service'
 require 'protos/google_unittest_import.pb'
 
 module Protobuf_unittest
-  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
   ##
   # Enum Classes
@@ -179,7 +179,7 @@ module Protobuf_unittest
   # File Options
   #
   set_option :java_outer_classname, "UnittestProto"
-  set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
+  set_option :optimize_for, ::Google::Protobuf::Bamboohealth::FileOptions::OptimizeMode::SPEED
   set_option :cc_generic_services, true
   set_option :java_generic_services, true
   set_option :py_generic_services, true
@@ -224,8 +224,8 @@ module Protobuf_unittest
     optional ::Protobuf_unittest::TestAllTypes::NestedEnum, :optional_nested_enum, 21
     optional ::Protobuf_unittest::ForeignEnum, :optional_foreign_enum, 22
     optional ::Protobuf_unittest_import::ImportEnum, :optional_import_enum, 23
-    optional :string, :optional_string_piece, 24, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    optional :string, :optional_cord, 25, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    optional :string, :optional_string_piece, 24, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    optional :string, :optional_cord, 25, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     optional ::Protobuf_unittest_import::PublicImportMessage, :optional_public_import_message, 26
     optional ::Protobuf_unittest::TestAllTypes::NestedMessage, :optional_lazy_message, 27, :lazy => true
     repeated :int32, :repeated_int32, 31
@@ -250,8 +250,8 @@ module Protobuf_unittest
     repeated ::Protobuf_unittest::TestAllTypes::NestedEnum, :repeated_nested_enum, 51
     repeated ::Protobuf_unittest::ForeignEnum, :repeated_foreign_enum, 52
     repeated ::Protobuf_unittest_import::ImportEnum, :repeated_import_enum, 53
-    repeated :string, :repeated_string_piece, 54, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    repeated :string, :repeated_cord, 55, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    repeated :string, :repeated_string_piece, 54, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    repeated :string, :repeated_cord, 55, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     repeated ::Protobuf_unittest::TestAllTypes::NestedMessage, :repeated_lazy_message, 57, :lazy => true
     optional :int32, :default_int32, 61, :default => 41
     optional :int64, :default_int64, 62, :default => 42
@@ -271,8 +271,8 @@ module Protobuf_unittest
     optional ::Protobuf_unittest::TestAllTypes::NestedEnum, :default_nested_enum, 81, :default => ::Protobuf_unittest::TestAllTypes::NestedEnum::BAR
     optional ::Protobuf_unittest::ForeignEnum, :default_foreign_enum, 82, :default => ::Protobuf_unittest::ForeignEnum::FOREIGN_BAR
     optional ::Protobuf_unittest_import::ImportEnum, :default_import_enum, 83, :default => ::Protobuf_unittest_import::ImportEnum::IMPORT_BAR
-    optional :string, :default_string_piece, 84, :default => "abc", :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    optional :string, :default_cord, 85, :default => "123", :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    optional :string, :default_string_piece, 84, :default => "abc", :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    optional :string, :default_cord, 85, :default => "123", :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     optional :uint32, :oneof_uint32, 111
     optional ::Protobuf_unittest::TestAllTypes::NestedMessage, :oneof_nested_message, 112
     optional :string, :oneof_string, 113
@@ -318,8 +318,8 @@ module Protobuf_unittest
     optional ::Protobuf_unittest::TestAllTypes::NestedEnum, :".protobuf_unittest.optional_nested_enum_extension", 21, :extension => true
     optional ::Protobuf_unittest::ForeignEnum, :".protobuf_unittest.optional_foreign_enum_extension", 22, :extension => true
     optional ::Protobuf_unittest_import::ImportEnum, :".protobuf_unittest.optional_import_enum_extension", 23, :extension => true
-    optional :string, :".protobuf_unittest.optional_string_piece_extension", 24, :extension => true, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    optional :string, :".protobuf_unittest.optional_cord_extension", 25, :extension => true, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    optional :string, :".protobuf_unittest.optional_string_piece_extension", 24, :extension => true, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    optional :string, :".protobuf_unittest.optional_cord_extension", 25, :extension => true, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     optional ::Protobuf_unittest_import::PublicImportMessage, :".protobuf_unittest.optional_public_import_message_extension", 26, :extension => true
     optional ::Protobuf_unittest::TestAllTypes::NestedMessage, :".protobuf_unittest.optional_lazy_message_extension", 27, :extension => true, :lazy => true
     repeated :int32, :".protobuf_unittest.repeated_int32_extension", 31, :extension => true
@@ -344,8 +344,8 @@ module Protobuf_unittest
     repeated ::Protobuf_unittest::TestAllTypes::NestedEnum, :".protobuf_unittest.repeated_nested_enum_extension", 51, :extension => true
     repeated ::Protobuf_unittest::ForeignEnum, :".protobuf_unittest.repeated_foreign_enum_extension", 52, :extension => true
     repeated ::Protobuf_unittest_import::ImportEnum, :".protobuf_unittest.repeated_import_enum_extension", 53, :extension => true
-    repeated :string, :".protobuf_unittest.repeated_string_piece_extension", 54, :extension => true, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    repeated :string, :".protobuf_unittest.repeated_cord_extension", 55, :extension => true, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    repeated :string, :".protobuf_unittest.repeated_string_piece_extension", 54, :extension => true, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    repeated :string, :".protobuf_unittest.repeated_cord_extension", 55, :extension => true, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     repeated ::Protobuf_unittest::TestAllTypes::NestedMessage, :".protobuf_unittest.repeated_lazy_message_extension", 57, :extension => true, :lazy => true
     optional :int32, :".protobuf_unittest.default_int32_extension", 61, :default => 41, :extension => true
     optional :int64, :".protobuf_unittest.default_int64_extension", 62, :default => 42, :extension => true
@@ -365,8 +365,8 @@ module Protobuf_unittest
     optional ::Protobuf_unittest::TestAllTypes::NestedEnum, :".protobuf_unittest.default_nested_enum_extension", 81, :default => ::Protobuf_unittest::TestAllTypes::NestedEnum::BAR, :extension => true
     optional ::Protobuf_unittest::ForeignEnum, :".protobuf_unittest.default_foreign_enum_extension", 82, :default => ::Protobuf_unittest::ForeignEnum::FOREIGN_BAR, :extension => true
     optional ::Protobuf_unittest_import::ImportEnum, :".protobuf_unittest.default_import_enum_extension", 83, :default => ::Protobuf_unittest_import::ImportEnum::IMPORT_BAR, :extension => true
-    optional :string, :".protobuf_unittest.default_string_piece_extension", 84, :default => "abc", :extension => true, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    optional :string, :".protobuf_unittest.default_cord_extension", 85, :default => "123", :extension => true, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    optional :string, :".protobuf_unittest.default_string_piece_extension", 84, :default => "abc", :extension => true, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    optional :string, :".protobuf_unittest.default_cord_extension", 85, :default => "123", :extension => true, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     optional :uint32, :".protobuf_unittest.oneof_uint32_extension", 111, :extension => true
     optional ::Protobuf_unittest::TestAllTypes::NestedMessage, :".protobuf_unittest.oneof_nested_message_extension", 112, :extension => true
     optional :string, :".protobuf_unittest.oneof_string_extension", 113, :extension => true
@@ -487,14 +487,14 @@ module Protobuf_unittest
     optional :string, :StringField, 2
     optional ::Protobuf_unittest::ForeignEnum, :EnumField, 3
     optional ::Protobuf_unittest::ForeignMessage, :MessageField, 4
-    optional :string, :StringPieceField, 5, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    optional :string, :CordField, 6, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    optional :string, :StringPieceField, 5, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    optional :string, :CordField, 6, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     repeated :int32, :RepeatedPrimitiveField, 7
     repeated :string, :RepeatedStringField, 8
     repeated ::Protobuf_unittest::ForeignEnum, :RepeatedEnumField, 9
     repeated ::Protobuf_unittest::ForeignMessage, :RepeatedMessageField, 10
-    repeated :string, :RepeatedStringPieceField, 11, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    repeated :string, :RepeatedCordField, 12, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    repeated :string, :RepeatedStringPieceField, 11, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    repeated :string, :RepeatedCordField, 12, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
   end
 
   class TestFieldOrderings
@@ -539,8 +539,8 @@ module Protobuf_unittest
     optional :string, :cpp_trigraph, 20, :default => "? ? ?? ?? ??? ??/ ??-"
     optional :string, :string_with_zero, 23, :default => "hel lo"
     optional :bytes, :bytes_with_zero, 24, :default => "wor\000ld"
-    optional :string, :string_piece_with_zero, 25, :default => "ab c", :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
-    optional :string, :cord_with_zero, 26, :default => "12 3", :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
+    optional :string, :string_piece_with_zero, 25, :default => "ab c", :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
+    optional :string, :cord_with_zero, 26, :default => "12 3", :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
     optional :string, :replacement_string, 27, :default => "${unknown}"
   end
 
@@ -621,8 +621,8 @@ module Protobuf_unittest
 
     optional :int32, :foo_int, 1
     optional :string, :foo_string, 2
-    optional :string, :foo_cord, 3, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
-    optional :string, :foo_string_piece, 4, :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
+    optional :string, :foo_cord, 3, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
+    optional :string, :foo_string_piece, 4, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
     optional :bytes, :foo_bytes, 5
     optional ::Protobuf_unittest::TestOneof2::NestedEnum, :foo_enum, 6
     optional ::Protobuf_unittest::TestOneof2::NestedMessage, :foo_message, 7
@@ -630,8 +630,8 @@ module Protobuf_unittest
     optional ::Protobuf_unittest::TestOneof2::NestedMessage, :foo_lazy_message, 11, :lazy => true
     optional :int32, :bar_int, 12, :default => 5
     optional :string, :bar_string, 13, :default => "STRING"
-    optional :string, :bar_cord, 14, :default => "CORD", :ctype => ::Google::Protobuf::FieldOptions::CType::CORD
-    optional :string, :bar_string_piece, 15, :default => "SPIECE", :ctype => ::Google::Protobuf::FieldOptions::CType::STRING_PIECE
+    optional :string, :bar_cord, 14, :default => "CORD", :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD
+    optional :string, :bar_string_piece, 15, :default => "SPIECE", :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING_PIECE
     optional :bytes, :bar_bytes, 16, :default => "BYTES"
     optional ::Protobuf_unittest::TestOneof2::NestedEnum, :bar_enum, 17, :default => ::Protobuf_unittest::TestOneof2::NestedEnum::BAR
     optional :int32, :baz_int, 18

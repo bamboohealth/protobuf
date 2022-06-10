@@ -10,10 +10,10 @@ require 'protobuf/rpc/service'
 ##
 # Imports
 #
-require 'google/protobuf/descriptor.pb'
+require 'google/protobuf/bamboohealth/descriptor.pb'
 
 module Test
-  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
   ##
   # Enum Classes
@@ -83,7 +83,7 @@ module Test
     set_option :map_entry, false
     set_option :".test.message_option", -56
 
-    required :string, :name, 1, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD, :".test.field_option" => 8765432109
+    required :string, :name, 1, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD, :".test.field_option" => 8765432109
     optional :int64, :date_created, 2
     optional ::Test::StatusType, :status, 3
     repeated ::Test::StatusType, :repeated_enum, 4
@@ -130,27 +130,27 @@ module Test
   ##
   # Extended Message Fields
   #
-  class ::Google::Protobuf::FileOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::FileOptions < ::Protobuf::Message
     optional :uint64, :".test.file_option", 9585869, :extension => true
   end
 
-  class ::Google::Protobuf::FieldOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::FieldOptions < ::Protobuf::Message
     optional :uint64, :".test.field_option", 858769, :extension => true
   end
 
-  class ::Google::Protobuf::EnumOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::EnumOptions < ::Protobuf::Message
     optional :int64, :".test.enum_option", 590284, :extension => true
   end
 
-  class ::Google::Protobuf::MessageOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::MessageOptions < ::Protobuf::Message
     optional :int64, :".test.message_option", 485969, :extension => true
   end
 
-  class ::Google::Protobuf::ServiceOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::ServiceOptions < ::Protobuf::Message
     optional :int64, :".test.service_option", 5869607, :extension => true
   end
 
-  class ::Google::Protobuf::MethodOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::MethodOptions < ::Protobuf::Message
     optional :int64, :".test.method_option", 7893233, :extension => true
   end
 
@@ -169,4 +169,3 @@ module Test
   end
 
 end
-

@@ -45,7 +45,7 @@ module Protobuf
 
     def self.inject(base_class, extend_class = true, &block)
       unless block_given?
-        fail ArgumentError, 'missing option class block (e.g: ::Google::Protobuf::MessageOptions)'
+        fail ArgumentError, 'missing option class block (e.g: ::Google::Protobuf::Bamboohealth::MessageOptions)'
       end
       if extend_class
         # Check if optionable_descriptor_class is already defined and short circuit if so.

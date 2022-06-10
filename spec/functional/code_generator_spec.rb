@@ -12,12 +12,12 @@ RSpec.describe 'code generation' do
 
     expected_file_descriptors = expected_files.map do |file_name|
       file_content = File.open(PROTOS_PATH.join(file_name), "r:UTF-8", &:read)
-      ::Google::Protobuf::Compiler::CodeGeneratorResponse::File.new(
+      ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse::File.new(
         :name => "protos/" + file_name, :content => file_content)
     end
 
     expected_output =
-      ::Google::Protobuf::Compiler::CodeGeneratorResponse.encode(:file => expected_file_descriptors, :supported_features => 1)
+      ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse.encode(:file => expected_file_descriptors, :supported_features => 1)
 
     code_generator = ::Protobuf::CodeGenerator.new(bytes)
     code_generator.eval_unknown_extensions!
@@ -25,19 +25,19 @@ RSpec.describe 'code generation' do
   end
 
   it "generates code for map types" do
-    input_descriptor = ::Google::Protobuf::FileDescriptorSet.decode(
+    input_descriptor = ::Google::Protobuf::Bamboohealth::FileDescriptorSet.decode(
       IO.read(PROTOS_PATH.join('map-test.bin'), :mode => 'rb'))
-    request = ::Google::Protobuf::Compiler::CodeGeneratorRequest.new(:file_to_generate => ['map-test.proto'],
+    request = ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorRequest.new(:file_to_generate => ['map-test.proto'],
                                                                      :proto_file => input_descriptor.file)
 
     file_name = "map-test.pb.rb"
     file_content = File.open(PROTOS_PATH.join(file_name), "r:UTF-8", &:read)
     expected_file_output =
-      ::Google::Protobuf::Compiler::CodeGeneratorResponse::File.new(
+      ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse::File.new(
         :name => file_name, :content => file_content)
 
     expected_response =
-      ::Google::Protobuf::Compiler::CodeGeneratorResponse.encode(:file => [expected_file_output], :supported_features => 1)
+      ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse.encode(:file => [expected_file_output], :supported_features => 1)
 
     code_generator = ::Protobuf::CodeGenerator.new(request.encode)
     code_generator.eval_unknown_extensions!
@@ -51,7 +51,7 @@ RSpec.describe 'code generation' do
     bytes = IO.read(PROTOS_PATH.join('google_unittest_custom_options.bin'), :mode => 'rb')
     code_generator = ::Protobuf::CodeGenerator.new(bytes)
     code_generator.eval_unknown_extensions!
-    response = ::Google::Protobuf::Compiler::CodeGeneratorResponse.decode(code_generator.response_bytes)
+    response = ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse.decode(code_generator.response_bytes)
     expect(response.file.find { |f| f.name == 'protos/google_unittest_custom_options.pb.rb' }.content)
       .to eq(expected_unittest_custom_options)
   end

@@ -7,7 +7,7 @@ require 'protobuf'
 
 module Google
   module Protobuf
-    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
     ##
     # Message Classes
@@ -120,7 +120,7 @@ module Google
     #
     set_option :java_package, "com.google.protobuf"
     set_option :java_outer_classname, "DescriptorProtos"
-    set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
+    set_option :optimize_for, ::Google::Protobuf::Bamboohealth::FileOptions::OptimizeMode::SPEED
     set_option :go_package, "google.golang.org/protobuf/types/descriptorpb"
     set_option :cc_enable_arenas, true
     set_option :objc_class_prefix, "GPB"
@@ -131,7 +131,7 @@ module Google
     # Message Fields
     #
     class FileDescriptorSet
-      repeated ::Google::Protobuf::FileDescriptorProto, :file, 1
+      repeated ::Google::Protobuf::Bamboohealth::FileDescriptorProto, :file, 1
     end
 
     class FileDescriptorProto
@@ -140,12 +140,12 @@ module Google
       repeated :string, :dependency, 3
       repeated :int32, :public_dependency, 10
       repeated :int32, :weak_dependency, 11
-      repeated ::Google::Protobuf::DescriptorProto, :message_type, 4
-      repeated ::Google::Protobuf::EnumDescriptorProto, :enum_type, 5
-      repeated ::Google::Protobuf::ServiceDescriptorProto, :service, 6
-      repeated ::Google::Protobuf::FieldDescriptorProto, :extension, 7
-      optional ::Google::Protobuf::FileOptions, :options, 8
-      optional ::Google::Protobuf::SourceCodeInfo, :source_code_info, 9
+      repeated ::Google::Protobuf::Bamboohealth::DescriptorProto, :message_type, 4
+      repeated ::Google::Protobuf::Bamboohealth::EnumDescriptorProto, :enum_type, 5
+      repeated ::Google::Protobuf::Bamboohealth::ServiceDescriptorProto, :service, 6
+      repeated ::Google::Protobuf::Bamboohealth::FieldDescriptorProto, :extension, 7
+      optional ::Google::Protobuf::Bamboohealth::FileOptions, :options, 8
+      optional ::Google::Protobuf::Bamboohealth::SourceCodeInfo, :source_code_info, 9
       optional :string, :syntax, 12
     end
 
@@ -153,7 +153,7 @@ module Google
       class ExtensionRange
         optional :int32, :start, 1
         optional :int32, :end, 2
-        optional ::Google::Protobuf::ExtensionRangeOptions, :options, 3
+        optional ::Google::Protobuf::Bamboohealth::ExtensionRangeOptions, :options, 3
       end
 
       class ReservedRange
@@ -162,19 +162,19 @@ module Google
       end
 
       optional :string, :name, 1
-      repeated ::Google::Protobuf::FieldDescriptorProto, :field, 2
-      repeated ::Google::Protobuf::FieldDescriptorProto, :extension, 6
-      repeated ::Google::Protobuf::DescriptorProto, :nested_type, 3
-      repeated ::Google::Protobuf::EnumDescriptorProto, :enum_type, 4
-      repeated ::Google::Protobuf::DescriptorProto::ExtensionRange, :extension_range, 5
-      repeated ::Google::Protobuf::OneofDescriptorProto, :oneof_decl, 8
-      optional ::Google::Protobuf::MessageOptions, :options, 7
-      repeated ::Google::Protobuf::DescriptorProto::ReservedRange, :reserved_range, 9
+      repeated ::Google::Protobuf::Bamboohealth::FieldDescriptorProto, :field, 2
+      repeated ::Google::Protobuf::Bamboohealth::FieldDescriptorProto, :extension, 6
+      repeated ::Google::Protobuf::Bamboohealth::DescriptorProto, :nested_type, 3
+      repeated ::Google::Protobuf::Bamboohealth::EnumDescriptorProto, :enum_type, 4
+      repeated ::Google::Protobuf::Bamboohealth::DescriptorProto::ExtensionRange, :extension_range, 5
+      repeated ::Google::Protobuf::Bamboohealth::OneofDescriptorProto, :oneof_decl, 8
+      optional ::Google::Protobuf::Bamboohealth::MessageOptions, :options, 7
+      repeated ::Google::Protobuf::Bamboohealth::DescriptorProto::ReservedRange, :reserved_range, 9
       repeated :string, :reserved_name, 10
     end
 
     class ExtensionRangeOptions
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
@@ -182,20 +182,20 @@ module Google
     class FieldDescriptorProto
       optional :string, :name, 1
       optional :int32, :number, 3
-      optional ::Google::Protobuf::FieldDescriptorProto::Label, :label, 4
-      optional ::Google::Protobuf::FieldDescriptorProto::Type, :type, 5
+      optional ::Google::Protobuf::Bamboohealth::FieldDescriptorProto::Label, :label, 4
+      optional ::Google::Protobuf::Bamboohealth::FieldDescriptorProto::Type, :type, 5
       optional :string, :type_name, 6
       optional :string, :extendee, 2
       optional :string, :default_value, 7
       optional :int32, :oneof_index, 9
       optional :string, :json_name, 10
-      optional ::Google::Protobuf::FieldOptions, :options, 8
+      optional ::Google::Protobuf::Bamboohealth::FieldOptions, :options, 8
       optional :bool, :proto3_optional, 17
     end
 
     class OneofDescriptorProto
       optional :string, :name, 1
-      optional ::Google::Protobuf::OneofOptions, :options, 2
+      optional ::Google::Protobuf::Bamboohealth::OneofOptions, :options, 2
     end
 
     class EnumDescriptorProto
@@ -205,29 +205,29 @@ module Google
       end
 
       optional :string, :name, 1
-      repeated ::Google::Protobuf::EnumValueDescriptorProto, :value, 2
-      optional ::Google::Protobuf::EnumOptions, :options, 3
-      repeated ::Google::Protobuf::EnumDescriptorProto::EnumReservedRange, :reserved_range, 4
+      repeated ::Google::Protobuf::Bamboohealth::EnumValueDescriptorProto, :value, 2
+      optional ::Google::Protobuf::Bamboohealth::EnumOptions, :options, 3
+      repeated ::Google::Protobuf::Bamboohealth::EnumDescriptorProto::EnumReservedRange, :reserved_range, 4
       repeated :string, :reserved_name, 5
     end
 
     class EnumValueDescriptorProto
       optional :string, :name, 1
       optional :int32, :number, 2
-      optional ::Google::Protobuf::EnumValueOptions, :options, 3
+      optional ::Google::Protobuf::Bamboohealth::EnumValueOptions, :options, 3
     end
 
     class ServiceDescriptorProto
       optional :string, :name, 1
-      repeated ::Google::Protobuf::MethodDescriptorProto, :method, 2
-      optional ::Google::Protobuf::ServiceOptions, :options, 3
+      repeated ::Google::Protobuf::Bamboohealth::MethodDescriptorProto, :method, 2
+      optional ::Google::Protobuf::Bamboohealth::ServiceOptions, :options, 3
     end
 
     class MethodDescriptorProto
       optional :string, :name, 1
       optional :string, :input_type, 2
       optional :string, :output_type, 3
-      optional ::Google::Protobuf::MethodOptions, :options, 4
+      optional ::Google::Protobuf::Bamboohealth::MethodOptions, :options, 4
       optional :bool, :client_streaming, 5, :default => false
       optional :bool, :server_streaming, 6, :default => false
     end
@@ -238,7 +238,7 @@ module Google
       optional :bool, :java_multiple_files, 10, :default => false
       optional :bool, :java_generate_equals_and_hash, 20, :deprecated => true
       optional :bool, :java_string_check_utf8, 27, :default => false
-      optional ::Google::Protobuf::FileOptions::OptimizeMode, :optimize_for, 9, :default => ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
+      optional ::Google::Protobuf::Bamboohealth::FileOptions::OptimizeMode, :optimize_for, 9, :default => ::Google::Protobuf::Bamboohealth::FileOptions::OptimizeMode::SPEED
       optional :string, :go_package, 11
       optional :bool, :cc_generic_services, 16, :default => false
       optional :bool, :java_generic_services, 17, :default => false
@@ -253,7 +253,7 @@ module Google
       optional :string, :php_namespace, 41
       optional :string, :php_metadata_namespace, 44
       optional :string, :ruby_package, 45
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
@@ -263,25 +263,25 @@ module Google
       optional :bool, :no_standard_descriptor_accessor, 2, :default => false
       optional :bool, :deprecated, 3, :default => false
       optional :bool, :map_entry, 7
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
 
     class FieldOptions
-      optional ::Google::Protobuf::FieldOptions::CType, :ctype, 1, :default => ::Google::Protobuf::FieldOptions::CType::STRING
+      optional ::Google::Protobuf::Bamboohealth::FieldOptions::CType, :ctype, 1, :default => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::STRING
       optional :bool, :packed, 2
-      optional ::Google::Protobuf::FieldOptions::JSType, :jstype, 6, :default => ::Google::Protobuf::FieldOptions::JSType::JS_NORMAL
+      optional ::Google::Protobuf::Bamboohealth::FieldOptions::JSType, :jstype, 6, :default => ::Google::Protobuf::Bamboohealth::FieldOptions::JSType::JS_NORMAL
       optional :bool, :lazy, 5, :default => false
       optional :bool, :deprecated, 3, :default => false
       optional :bool, :weak, 10, :default => false
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
 
     class OneofOptions
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
@@ -289,29 +289,29 @@ module Google
     class EnumOptions
       optional :bool, :allow_alias, 2
       optional :bool, :deprecated, 3, :default => false
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
 
     class EnumValueOptions
       optional :bool, :deprecated, 1, :default => false
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
 
     class ServiceOptions
       optional :bool, :deprecated, 33, :default => false
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
 
     class MethodOptions
       optional :bool, :deprecated, 33, :default => false
-      optional ::Google::Protobuf::MethodOptions::IdempotencyLevel, :idempotency_level, 34, :default => ::Google::Protobuf::MethodOptions::IdempotencyLevel::IDEMPOTENCY_UNKNOWN
-      repeated ::Google::Protobuf::UninterpretedOption, :uninterpreted_option, 999
+      optional ::Google::Protobuf::Bamboohealth::MethodOptions::IdempotencyLevel, :idempotency_level, 34, :default => ::Google::Protobuf::Bamboohealth::MethodOptions::IdempotencyLevel::IDEMPOTENCY_UNKNOWN
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption, :uninterpreted_option, 999
       # Extension Fields
       extensions 1000...536870912
     end
@@ -322,7 +322,7 @@ module Google
         required :bool, :is_extension, 2
       end
 
-      repeated ::Google::Protobuf::UninterpretedOption::NamePart, :name, 2
+      repeated ::Google::Protobuf::Bamboohealth::UninterpretedOption::NamePart, :name, 2
       optional :string, :identifier_value, 3
       optional :uint64, :positive_int_value, 4
       optional :int64, :negative_int_value, 5
@@ -340,7 +340,7 @@ module Google
         repeated :string, :leading_detached_comments, 6
       end
 
-      repeated ::Google::Protobuf::SourceCodeInfo::Location, :location, 1
+      repeated ::Google::Protobuf::Bamboohealth::SourceCodeInfo::Location, :location, 1
     end
 
     class GeneratedCodeInfo
@@ -351,7 +351,7 @@ module Google
         optional :int32, :end, 4
       end
 
-      repeated ::Google::Protobuf::GeneratedCodeInfo::Annotation, :annotation, 1
+      repeated ::Google::Protobuf::Bamboohealth::GeneratedCodeInfo::Annotation, :annotation, 1
     end
 
   end

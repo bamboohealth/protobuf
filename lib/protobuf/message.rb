@@ -11,7 +11,7 @@ module Protobuf
 
     extend ::Protobuf::Message::Fields
     include ::Protobuf::Message::Serialization
-    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::MessageOptions }
+    ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::MessageOptions }
 
     ##
     # Class Methods

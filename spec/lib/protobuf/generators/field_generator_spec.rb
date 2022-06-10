@@ -25,7 +25,7 @@ RSpec.describe ::Protobuf::Generators::FieldGenerator do
       :options => field_options,
     }
   end
-  let(:field) { ::Google::Protobuf::FieldDescriptorProto.new(field_fields) }
+  let(:field) { ::Google::Protobuf::Bamboohealth::FieldDescriptorProto.new(field_fields) }
 
   let(:nested_types) { [] }
   let(:owner_fields) do
@@ -35,7 +35,7 @@ RSpec.describe ::Protobuf::Generators::FieldGenerator do
       :nested_type => nested_types,
     }
   end
-  let(:owner_msg) { ::Google::Protobuf::DescriptorProto.new(owner_fields) }
+  let(:owner_msg) { ::Google::Protobuf::Bamboohealth::DescriptorProto.new(owner_fields) }
 
   describe '#compile' do
     subject { described_class.new(field, owner_msg, 1).to_s }
@@ -115,23 +115,23 @@ RSpec.describe ::Protobuf::Generators::FieldGenerator do
       let(:type_name) { '.foo.bar.Baz.FooBarEntry' }
       let(:label_enum) { :LABEL_REPEATED }
       let(:nested_types) do
-        [::Google::Protobuf::DescriptorProto.new(
+        [::Google::Protobuf::Bamboohealth::DescriptorProto.new(
           :name => 'FooBarEntry',
           :field => [
-            ::Google::Protobuf::FieldDescriptorProto.new(
+            ::Google::Protobuf::Bamboohealth::FieldDescriptorProto.new(
               :label => :LABEL_OPTIONAL,
               :name => 'key',
               :number => 1,
               :type => :TYPE_STRING,
               :type_name => nil),
-            ::Google::Protobuf::FieldDescriptorProto.new(
+            ::Google::Protobuf::Bamboohealth::FieldDescriptorProto.new(
               :label => :LABEL_OPTIONAL,
               :name => 'value',
               :number => 2,
               :type => :TYPE_ENUM,
               :type_name => '.foo.bar.SnafuState'),
           ],
-          :options => ::Google::Protobuf::MessageOptions.new(:map_entry => true)),
+          :options => ::Google::Protobuf::Bamboohealth::MessageOptions.new(:map_entry => true)),
         ]
       end
 
@@ -154,7 +154,7 @@ RSpec.describe ::Protobuf::Generators::FieldGenerator do
         optional :string, :foo, 1
       end
 
-      class ::Google::Protobuf::FieldOptions < ::Protobuf::Message
+      class ::Google::Protobuf::Bamboohealth::FieldOptions < ::Protobuf::Message
         optional :string, :custom_string_option, 22000, :extension => true
         optional :bool, :custom_bool_option, 22001, :extension => true
         optional :int32, :custom_int32_option, 22002, :extension => true

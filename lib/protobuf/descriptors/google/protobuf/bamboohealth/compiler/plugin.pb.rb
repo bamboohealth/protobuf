@@ -14,7 +14,7 @@ require 'google/protobuf/descriptor.pb'
 module Google
   module Protobuf
     module Compiler
-      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+      ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
       ##
       # Message Classes
@@ -54,8 +54,8 @@ module Google
       class CodeGeneratorRequest
         repeated :string, :file_to_generate, 1
         optional :string, :parameter, 2
-        repeated ::Google::Protobuf::FileDescriptorProto, :proto_file, 15
-        optional ::Google::Protobuf::Compiler::Version, :compiler_version, 3
+        repeated ::Google::Protobuf::Bamboohealth::FileDescriptorProto, :proto_file, 15
+        optional ::Google::Protobuf::Bamboohealth::Compiler::Version, :compiler_version, 3
       end
 
       class CodeGeneratorResponse
@@ -63,12 +63,12 @@ module Google
           optional :string, :name, 1
           optional :string, :insertion_point, 2
           optional :string, :content, 15
-          optional ::Google::Protobuf::GeneratedCodeInfo, :generated_code_info, 16
+          optional ::Google::Protobuf::Bamboohealth::GeneratedCodeInfo, :generated_code_info, 16
         end
 
         optional :string, :error, 1
         optional :uint64, :supported_features, 2
-        repeated ::Google::Protobuf::Compiler::CodeGeneratorResponse::File, :file, 15
+        repeated ::Google::Protobuf::Bamboohealth::Compiler::CodeGeneratorResponse::File, :file, 15
       end
 
     end
@@ -76,4 +76,3 @@ module Google
   end
 
 end
-

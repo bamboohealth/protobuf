@@ -10,10 +10,10 @@ require 'protobuf/rpc/service'
 ##
 # Imports
 #
-require 'google/protobuf/descriptor.pb'
+require 'google/protobuf/bamboohealth/descriptor.pb'
 
 module Protobuf_unittest
-  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
   ##
   # Enum Classes
@@ -120,7 +120,7 @@ module Protobuf_unittest
     set_option :message_set_wire_format, false
     set_option :".protobuf_unittest.message_opt1", -56
 
-    optional :string, :field1, 1, :ctype => ::Google::Protobuf::FieldOptions::CType::CORD, :".protobuf_unittest.field_opt1" => 8765432109
+    optional :string, :field1, 1, :ctype => ::Google::Protobuf::Bamboohealth::FieldOptions::CType::CORD, :".protobuf_unittest.field_opt1" => 8765432109
   end
 
   class CustomOptionMinIntegerValues
@@ -238,7 +238,7 @@ module Protobuf_unittest
     optional :int32, :i, 1
     optional :string, :s, 2
     optional ::Protobuf_unittest::Aggregate, :sub, 3
-    optional ::Google::Protobuf::FileOptions, :file, 4
+    optional ::Google::Protobuf::Bamboohealth::FileOptions, :file, 4
     optional ::Protobuf_unittest::AggregateMessageSet, :mset, 5
   end
 
@@ -277,14 +277,14 @@ module Protobuf_unittest
   ##
   # Extended Message Fields
   #
-  class ::Google::Protobuf::FileOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::FileOptions < ::Protobuf::Message
     optional :uint64, :".protobuf_unittest.file_opt1", 7736974, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.fileopt", 15478479, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.Aggregate.nested", 15476903, :extension => true
     optional :int32, :".protobuf_unittest.NestedOptionType.nested_extension", 7912573, :extension => true, :".protobuf_unittest.field_opt2" => 1005
   end
 
-  class ::Google::Protobuf::MessageOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::MessageOptions < ::Protobuf::Message
     optional :int32, :".protobuf_unittest.message_opt1", 7739036, :extension => true
     optional :bool, :".protobuf_unittest.bool_opt", 7706090, :extension => true
     optional :int32, :".protobuf_unittest.int32_opt", 7705709, :extension => true
@@ -313,28 +313,28 @@ module Protobuf_unittest
     optional ::Protobuf_unittest::ComplexOptionType2::ComplexOptionType4, :".protobuf_unittest.ComplexOptionType2.ComplexOptionType4.complex_opt4", 7633546, :extension => true
   end
 
-  class ::Google::Protobuf::FieldOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::FieldOptions < ::Protobuf::Message
     optional :fixed64, :".protobuf_unittest.field_opt1", 7740936, :extension => true
     optional :int32, :".protobuf_unittest.field_opt2", 7753913, :default => 42, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.fieldopt", 15481374, :extension => true
   end
 
-  class ::Google::Protobuf::EnumOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::EnumOptions < ::Protobuf::Message
     optional :sfixed32, :".protobuf_unittest.enum_opt1", 7753576, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.enumopt", 15483218, :extension => true
   end
 
-  class ::Google::Protobuf::EnumValueOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::EnumValueOptions < ::Protobuf::Message
     optional :int32, :".protobuf_unittest.enum_value_opt1", 1560678, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.enumvalopt", 15486921, :extension => true
   end
 
-  class ::Google::Protobuf::ServiceOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::ServiceOptions < ::Protobuf::Message
     optional :sint64, :".protobuf_unittest.service_opt1", 7887650, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.serviceopt", 15497145, :extension => true
   end
 
-  class ::Google::Protobuf::MethodOptions < ::Protobuf::Message
+  class ::Google::Protobuf::Bamboohealth::MethodOptions < ::Protobuf::Message
     optional ::Protobuf_unittest::MethodOpt1, :".protobuf_unittest.method_opt1", 7890860, :extension => true
     optional ::Protobuf_unittest::Aggregate, :".protobuf_unittest.methodopt", 15512713, :extension => true
   end
@@ -358,4 +358,3 @@ module Protobuf_unittest
   end
 
 end
-

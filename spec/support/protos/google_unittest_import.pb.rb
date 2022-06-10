@@ -12,7 +12,7 @@ require 'protobuf'
 require 'protos/google_unittest_import_public.pb'
 
 module Protobuf_unittest_import
-  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::FileOptions }
+  ::Protobuf::Optionable.inject(self) { ::Google::Protobuf::Bamboohealth::FileOptions }
 
   ##
   # Enum Classes
@@ -40,7 +40,7 @@ module Protobuf_unittest_import
   # File Options
   #
   set_option :java_package, "com.google.protobuf.test"
-  set_option :optimize_for, ::Google::Protobuf::FileOptions::OptimizeMode::SPEED
+  set_option :optimize_for, ::Google::Protobuf::Bamboohealth::FileOptions::OptimizeMode::SPEED
   set_option :cc_enable_arenas, true
 
 

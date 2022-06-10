@@ -15,7 +15,7 @@ require 'protobuf/rpc/server'
 require SUPPORT_PATH.join('all')
 
 $LOAD_PATH << ::File.expand_path("../../lib/protobuf/descriptors", __FILE__)
-require 'google/protobuf/compiler/plugin.pb'
+require 'google/protobuf/bamboohealth/compiler/plugin.pb'
 
 # Including a way to turn on debug logger for spec runs
 if ENV.key?('DEBUG')
